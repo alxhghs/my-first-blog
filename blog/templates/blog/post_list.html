@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Alex's Blog</title>
-    <img src="https://i.ytimg.com/vi/prALrHUJ8Ns/hqdefault.jpg" alt="Mountain View" style="width:304px;height:228px;">
+    <img src="https://i.ytimg.com/vi/prALrHUJ8Ns/hqdefault.jpg" alt="Cat" style="width:304px;height:228px;">
   </head>
   <body>
     <div>
-      <h1><a href="">Blog Post1</a></h1>
-      <p>blergy berlgy blergy e</p>
+      <h1><a href = "">Blog Posts</a></h1>
     </div>
-    {{  posts  }}
-    <div>
-      <h1><a href="">Blog Post2</a></h2>
-        <p>blergheg eghaghes</p>
-    </div>
+    {% for post in posts %}
+      <div>
+
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>published: {{ post.published_date }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
