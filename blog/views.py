@@ -15,12 +15,11 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+            post = form.save(commit=False) # not ready to commit yet
+            post.author = request.user # add the author here since there was no field in the form
+            post.published_date = timezone.now() # default publish date is when it's submitted
+            post.save() # this commits the save
+            return redirect('post_detail', pk=post.pk) # this is the name of the view we want to go to
     else:
         form = PostForm()
-    return render(request, 'blog/post_edit.html', {
-    'form': form})
+    return render(request, 'blog/post_edit.html', {'form': form})
