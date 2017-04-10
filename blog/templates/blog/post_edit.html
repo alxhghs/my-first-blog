@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>New post</h1>
-  <!- this is the method="POST" referenced in the view file ->
+  <!-- this is the method="POST" referenced in the view file -->
   <form method="POST" class="post-form">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Save</button>
