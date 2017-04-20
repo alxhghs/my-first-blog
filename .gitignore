@@ -6,3 +6,10 @@ db.sqlite3
 /static
 .DS_Store
 .idea
+.idea/dataSources.local.xml
+.idea/dataSources/
+.idea/djangogirls.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
