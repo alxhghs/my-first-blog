@@ -12,8 +12,10 @@
   </head>
   <body>
     <div class="page-header">
-      <!-- glyphicon glyphicon-plus adds the plus sign -->
-      <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+      {% if user.is_authenticated %}
+        <!-- glyphicon glyphicon-plus adds the plus sign -->
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+      {% endif %}
       <h1><a href="/">Alex's Blog</a></h1>
     </div>
     <div class="content container">
